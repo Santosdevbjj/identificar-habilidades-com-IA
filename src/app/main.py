@@ -2,6 +2,10 @@ import uvicorn
 from fastapi import FastAPI, HTTPException, status
 from app.models.recommendation import Skill2IncomeResponse
 from typing import Dict
+from app.routers.api import router as ai_router
+app.include_router(ai_router)
+
+
 
 app = FastAPI(
     title="Skill2Income AI Engines",
