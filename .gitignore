@@ -1,0 +1,92 @@
+# ==========================================
+# Ambientes Virtuais e Dependências Locais
+# ==========================================
+venv/
+.venv/
+env/
+.env/
+ENV/
+build/
+dist/
+.eggs/
+*.egg-info/
+*.egg
+poetry.lock
+Pipfile.lock
+
+# ==========================================
+# Arquivos Temporários e Cache do Python
+# ==========================================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+doc/_build/
+target/
+
+# ==========================================
+# Configurações de IDEs e Editores de Código
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# ==========================================
+# Segurança e Variáveis de Ambiente (CRÍTICO)
+# ==========================================
+.env
+.env.local
+.env.development
+.env.production
+*.pem
+*.key
+*.secret
+credentials.json
+
+# ==========================================
+# Logs e Bancos de Dados Locais
+# ==========================================
+*.log
+logs/
+*.sqlite
+*.db
+
+# ==========================================
+# Arquivos do Sistema Operacional
+# ==========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ==========================================
+# Artefatos de Testes e Cobertura de Código
+# ==========================================
+.pytest_cache/
+.htmlcov/
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+coverage.xml
+nosetests.xml
+
+# ==========================================
+# Jupyter Notebooks (Arquivos de Checkpoint)
+# ==========================================
+.ipynb_checkpoints/
+.virtual_documents/
+
+# ==========================================
+# Containerização (Arquivos locais do Docker)
+# ==========================================
+.docker/
