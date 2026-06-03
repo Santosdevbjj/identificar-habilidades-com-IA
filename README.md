@@ -97,7 +97,7 @@ pytest -v
  1. Substituir buscas parciais por **Busca Semântica com Embeddings** (text-embedding-3-small).
  2. Implementar uma camada de cache local com **Redis** para mitigar custos de tokens em consultas idênticas.
  3. Integrar scrapers ativos para atualização dinâmica das tabelas de tendências de mercado.
-```
+
 
 ---
 
