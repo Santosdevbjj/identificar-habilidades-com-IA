@@ -14,3 +14,19 @@ Os dados brutos entram no sistema via requisição HTTP POST sob um contrato est
   "usuario_id": "usr_santos_2026",
   "raw_text": "SÉRGIO LUIZ DOS SANTOS. Cientista de Dados focado na construção de produtos analíticos voltados à redução de risco e geração de impacto financeiro... Python | SQL | C# | .NET | Azure Databricks | Power BI | Docker[span_3](start_span)[span_3](end_span)."
 }
+
+---
+
+Tratamento e Higienização de Fluxos de Texto
+​Antes de submeter o payload aos modelos de linguagem (LLMs), a camada src/app/services/ai/skill_extractor.py executa rotinas de higienização:
+
+
+
+​Sanitização de Quebras de Linha: Remoção de caracteres de escape nulos (\u0000, \xa0) comuns em extrações de PDFs.
+
+---
+
+​Truncamento Dinâmico (Windowing): Limitação de tamanho de tokens baseada no Context Window do modelo gpt-4o-mini para evitar vazamento de memória e custos excessivos por requisição.
+​Isolamento de Credenciais: Descarte ativo de números de telefone ou documentos explícitos na camada de logs para conformidade com a LGPD.
+
+
