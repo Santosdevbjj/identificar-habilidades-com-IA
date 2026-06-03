@@ -101,10 +101,4 @@ pytest -v
 
 ---
 
-### 🚀 O que isso significa para o seu portfólio:
 
-1. **Aprovação Visual (Luiz Café):** O uso de badges, tabelas limpas, seções bem demarcadas e um passo a passo direto de execução garante que o recrutador entenda o projeto num relance de olhos.
-2. **Aprovação Técnica (Meigarom Lopes):** A presença de seções como *Baseline*, *Business Performance* (com a tabela de preços e fórmula matemática) e *Engenharia de Qualidade* prova por A mais B que você domina o ciclo completo de desenvolvimento de produtos analíticos de dados orientados a valor[span_9](start_span)[span_9](end_span).
-
-
-```
