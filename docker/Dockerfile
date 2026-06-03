@@ -1,7 +1,7 @@
 # ==========================================
 # Estágio 1: Builder (Compilação e Instalação)
 # ==========================================
-FROM python:3.11-slim AS builder
+FROM python:3.14.5-slim AS builder
 
 WORKDIR /app
 
@@ -20,7 +20,7 @@ RUN pip install --no-cache-dir --user -r requirements.txt
 # ==========================================
 # Estágio 2: Runtime (Imagem Final de Produção)
 # ==========================================
-FROM python:3.11-slim AS runtime
+FROM python:3.14.5-slim AS runtime
 
 WORKDIR /app
 
