@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  # Serviço 1: Backend API (FastAPI com os motores de IA)
+  backend-api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: skill2income_api
+    environment:
+      - SERVICE_TYPE=api
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    ports:
+      - "8000:8000"
+    networks:
+      - skill2income_network
+    restart: always
+
+  # Serviço 2: Frontend Dashboard (Streamlit Executivo)
+  frontend-dashboard:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: skill2income_dashboard
+    environment:
+      - SERVICE_TYPE=dashboard
+    ports:
+      - "8501:8501"
+    networks:
+      - skill2income_network
+    depends_on:
+      - backend-api
+    restart: always
+
+networks:
+  skill2income_network:
+    driver: bridge
