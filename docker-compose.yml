@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.9'
 
 services:
   # Serviço 1: Backend API (FastAPI com os motores de IA)
