@@ -1,0 +1,9 @@
+path_id,skill_requerida_principal,categoria_path,servico_alvo,ticket_referencia_reais,justificativa_senioridade
+PTH-001,python,Engenharia de Dados,Automacao de Pipelines de Dados e RPA,2000.00,"Perfis seniores conectam scripts Python isolados a fluxos de negocio robustos corporativos.[span_1](start_span)"[span_1](end_span)
+PTH-002,fastapi,Arquitetura de Software,Desenvolvimento de APIs e Microservicos Resilientes,2500.00,Construcao de backends assincronos integrados a motores de IA para automacao de processos.
+PTH-003,azure databricks,Big Data,Consultoria de Arquitetura de Dados em Nuvem,4000.00,Processamento distribuido de grandes volumes de informacao focado em otimizacao de custos.
+PTH-004,power bi,Business Intelligence,Desenvolvimento de Dashboards e Relatorios Executivos,1500.00,Traducao de bancos de dados relacionais em visoes gerenciais de facil compreensao para C-Levels.
+PTH-005,liderança técnica,Consultoria Estruturada,Mentoria e Aceleracao de Times de Tecnologia,3000.00,Governança de tecnologia e reducao do tempo de ramp-up de profissionais juniores.
+PTH-006,storytelling de dados,Engenharia de Valor,Traducao de Metricas Tecnicas em Impacto Financeiro,3500.00,Apresentacao de relatorios estrategicos que justificam o ROI de projetos analiticos para a diretoria.
+PTH-007,mitigacao de risco,Seguranca e Conformidade,Consultoria de Continuidade de Negocios e Risco Operacional,3500.00,"Desenho de travas de seguranca em sistemas criticos e regulados, mitigando perdas financeiras."
+PTH-008,docker,DevOps,Containerizacao e Estruturacao de Ambientes de Deploy,1000.00,Padronizacao de pacotes de software garantindo portabilidade entre ambientes locais e nuvem.
