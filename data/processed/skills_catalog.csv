@@ -1,6 +1,6 @@
 skill_id,sub_categoria,skill_nome,descricao_tecnica
 SKL-001,Tecnicas,Python,Linguagem de programacao backend e principal ecossistema para analise de dados e IA.
-SKL-002,Tecnicas,SQL,Linguagem padrao para manipulacao, extracao e modelagem de bancos de dados relacionais.
+SKL-002,Tecnicas,SQL,"Linguagem padrao para manipulacao, extracao e modelagem de bancos de dados relacionais."
 SKL-003,Tecnicas,FastAPI,Framework Python assincrono de alta performance focado na construcao de APIs e microservicos.
 SKL-004,Tecnicas,Streamlit,Biblioteca para prototipagem rapida de paineis e dashboards interativos para cientistas de dados.
 SKL-005,Tecnicas,Power BI,Ferramenta corporativa de Business Intelligence para visualizacao de dados e dashboards executivos.
@@ -10,12 +10,12 @@ SKL-008,Tecnicas,Machine Learning,Modelagem estatistica preditiva incluindo algo
 SKL-009,Tecnicas,C# .NET,Ecossistema de desenvolvimento focado em arquiteturas robustas e integracao de sistemas legados.
 SKL-010,Tecnicas,Linux,Administracao de servidores corporativos baseados em Unix e gerenciamento de permissoes.
 SKL-011,Tecnicas,Windows Server,Gerenciamento de infraestrutura de rede corporativa e sistemas criticos baseados em Microsoft.
-SKL-012,Comportamentais,Mitigacao de Risco,Capacidade de antecipar vulnerabilidades operacionais e desenhar travas de seguranca em sistemas.
-SKL-013,Comportamentais,Lideranca Tecnica,Conducao de equipes de engenharia em momentos de crise, governanca e tomada de decisao critica.
+SKL-012,Comportamentais,Mitigacao de Risco,"Capacidade de antecipar vulnerabilidades operacionais e desenhar travas de seguranca em sistemas."
+SKL-013,Comportamentais,Lideranca Tecnica,"Conducao de equipes de engenharia em momentos de crise, governanca e tomada de decisao critica."
 SKL-014,Comportamentais,Pensamento Analitico,Abordagem estruturada para desestruturar problemas complexos corporativos em solucoes baseadas em dados.
 SKL-015,Comportamentais,Conformidade Regulatoria,Garantia de que os pipelines de engenharia de software e dados atendam as regras restritas e LGPD.
 SKL-016,Comportamentais,Organizacao de Projetos,Estruturacao de fluxos de trabalho analiticos minimizando o atrito entre negocio e desenvolvimento.
 SKL-017,Criativas,Storytelling de Dados,Capacidade de traduzir metricas matematicas abstratas em relatorios de facil compreensao para C-Levels.
-SKL-018,Criativas,Producao de Conteudo Tecnico,Escrita de artigos de engenharia, documentacoes estruturadas e disseminacao de conhecimento.
-SKL-019,Criativas,Mentoria Tecnica,Capacidade de acelerar o desenvolvimento de profissionais juniores e estagiarios atraves de orientacao pratica.
+SKL-018,Criativas,Producao de Conteudo Tecnico,"Escrita de artigos de engenharia, documentacoes estruturadas e disseminacao de conhecimento."
+SKL-019,Criativas,Mentoria Tecnica,Capacidade de acelerar o desenvolvimento de profissionais juniores e estagiarios活traves de orientacao pratica.
 SKL-020,Criativas,Desenho de Solucoes,Concepcao de arquiteturas de software originais que transformam gargalos operacionais em canais de receita.
