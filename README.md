@@ -14,6 +14,9 @@ O **Skill2Income AI** é uma plataforma de inteligência artificial pronta para 
 🚀 **[Clique aqui para testar a aplicação ao vivo](https://skill2income-ai.streamlit.app/)**
 ---
 
+---
+
+
 ## 🎯 1. Problema de Negócio
 
 Muitos profissionais possuem habilidades valiosas, mas sofrem de **cegueira de monetização**: não conseguem identificar o valor de mercado do que já sabem fazer, como estruturar esses conhecimentos em serviços de escopo fechado ou como gerar renda complementar. 
