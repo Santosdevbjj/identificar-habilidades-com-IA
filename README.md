@@ -16,7 +16,7 @@
 [![OpenAI](https://img.shields.io/badge/OpenAI_GPT--4o--mini-412991?style=for-the-badge&logo=OpenAI&logoColor=white)](https://openai.com/)
 [![Pydantic](https://img.shields.io/badge/Pydantic_v2-E92063?style=for-the-badge&logo=pydantic&logoColor=white)](https://docs.pydantic.dev/)
 
-> **Desafio DIO — Mapa de Habilidades com IA | Bootcamp Microsoft Copilot AI**
+> **Desafio DIO — Mapa de Habilidades com IA**
 >
 > Produto analítico completo que automatiza o inventário de competências profissionais e gera planos de monetização orientados por dados de mercado — com impacto financeiro quantificado em reais.
 
@@ -24,8 +24,10 @@
 
 🚀 **[Testar a aplicação ao vivo no Streamlit](https://skill2income-ai.streamlit.app/)**
 &nbsp;&nbsp;|&nbsp;&nbsp;
+
 📁 **[Repositório GitHub](https://github.com/Santosdevbjj/identificar-habilidades-com-IA)**
 &nbsp;&nbsp;|&nbsp;&nbsp;
+
 🌐 **[Portfólio Sérgio Santos](https://portfoliosantossergio.vercel.app)**
 
 ---
