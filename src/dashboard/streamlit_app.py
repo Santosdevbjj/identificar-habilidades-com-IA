@@ -11,7 +11,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Estilização Customizada CSS para Visual Clean (Filtro Luiz Café)
+# Estilização Customizada CSS para Visual Clean
 st.markdown("""
     <style>
     .main-title { font-size:38px !important; font-weight: 800; color: #1E3A8A; margin-bottom: 5px; }
