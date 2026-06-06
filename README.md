@@ -7,6 +7,8 @@
 
 O **Skill2Income AI** é uma plataforma de inteligência artificial pronta para produção que automatiza o inventário de competências profissionais e gera planos personalizados de monetização em plataformas de economia aberta. Inspirado diretamente no desafio do *Mapa de Habilidades da DIO*, o projeto foi transformado em um produto analítico completo de software.
 
+
+🚀 **[Clique aqui para testar a aplicação ao vivo](https://skill2income-ai.streamlit.app/)**
 ---
 
 ## 🎯 1. Problema de Negócio
