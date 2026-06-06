@@ -12,6 +12,7 @@ st.set_page_config(
 )
 
 # Estilização Customizada CSS para Visual Clean (Filtro Luiz Café)
+# CORREÇÃO AQUI: Mudado de unsafe_allowed_html para unsafe_allow_html
 st.markdown("""
     <style>
     .main-title { font-size:38px !important; font-weight: 800; color: #1E3A8A; margin-bottom: 5px; }
@@ -19,18 +20,18 @@ st.markdown("""
     .metric-box { background-color: #F3F4F6; padding: 20px; border-radius: 10px; border-left: 5px solid #10B981; }
     .card-oportunidade { background-color: #FFFFFF; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 15px; border: 1px solid #E5E7EB; }
     </style>
-""", unsafe_allowed_html=True)
+""", unsafe_allow_html=True)
 
-# Resolução de URL inteligente: detecta se está rodando dentro do Docker ou local
+# Resolução de URL inteligente: detecta se está rodando no Streamlit Cloud ou local
 IS_DOCKER = os.getenv("SERVICE_TYPE") is not None
-BASE_API_URL = "http://backend-api:8000" if IS_DOCKER else "http://localhost:8000"
+# Se rodar no Streamlit Cloud ou local sem contêiner, ele busca a API local. 
+# Se for usar Docker-compose, use a URL da rede do docker.
+BASE_API_URL = "http://localhost:8000"
 API_URL = f"{BASE_API_URL}/api/v1/analyze"
 
 def call_ai_pipeline(usuario_id: str, raw_text: str):
-    """Efetua a chamada síncrona segura para a API de IA Core, ideal para o ciclo de vida do Streamlit."""
+    """Efetua a chamada síncrona segura para a API de IA Core."""
     payload = {"usuario_id": usuario_id, "raw_text": raw_text}
-    
-    # Nota de Arquitetura: Usando cliente síncrono para evitar conflitos de threads no Streamlit
     with httpx.Client(timeout=45.0) as client:
         response = client.post(API_URL, json=payload)
         response.raise_for_status()
@@ -47,7 +48,6 @@ with st.sidebar:
     st.markdown("### **Insumos de Entrada**")
     tipo_input = st.radio("Selecione a fonte de análise:", ["Currículo / Perfil Profissional", "Respostas do Inventário DIO"])
     
-    # Texto Padrão de Exemplo baseado no Perfil Sênior de Sérgio Santos
     default_text = """SÉRGIO LUIZ DOS SANTOS
 Cientista de Dados | Soluções de Machine Learning Orientadas a Risco.
 Mais de 20 anos de experiência em sistemas críticos e bancários (Bradesco).
@@ -71,20 +71,19 @@ if btn_analisar:
     else:
         with st.spinner("🤖 Os Motores de IA estão analisando o perfil e mapeando o mercado de trabalho..."):
             try:
-                # Execução estável da chamada de rede
                 result = call_ai_pipeline(usuario_id, raw_text)
                 
-                # Extração dos dados limpos mapeados pelo contrato Pydantic
                 skills = result["skills_identificadas"]
                 plano = result["plano_monetizacao"]
                 renda_estimada = result["potencial_renda_mensal_estimado"]
                 
-                # ----------------- ABA 1: BUSINESS PERFORMANCE (FOCO MEIGAROM) -----------------
+                # ----------------- ABA 1: BUSINESS PERFORMANCE -----------------
                 st.markdown("### 📈 Impacto de Negócio & Retorno Financeiro")
                 
                 col1, col2 = st.columns([1, 2])
                 
                 with col1:
+                    # CORREÇÃO AQUI: Mudado de unsafe_allowed_html para unsafe_allow_html
                     st.markdown(
                         f"""
                         <div class="metric-box">
@@ -93,11 +92,11 @@ if btn_analisar:
                             <span style='font-size: 12px; color: #6B7280;'>Média calculada por projetos ativos de escopo fechado</span>
                         </div>
                         """, 
-                        unsafe_allowed_html=True
+                        unsafe_allow_html=True
                     )
-                    st.markdown("<br>", unsafe_allowed_html=True)
+                    # CORREÇÃO AQUI: Mudado de unsafe_allowed_html para unsafe_allow_html
+                    st.markdown("<br>", unsafe_allow_html=True)
                     
-                    # Gráfico de Distribuição das Habilidades Mapeadas
                     dados_grafico = {
                         "Categoria": ["Técnicas", "Comportamentais", "Criativas"],
                         "Quantidade": [len(skills.get("tecnicas", [])), len(skills.get("comportamentais", [])), len(skills.get("criativas", []))]
@@ -113,6 +112,7 @@ if btn_analisar:
                         st.info("A IA não identificou canais imediatos de monetização para as entradas fornecidas.")
                     else:
                         for item in plano:
+                            # CORREÇÃO AQUI: Mudado de unsafe_allowed_html para unsafe_allow_html
                             st.markdown(f"""
                                 <div class="card-oportunidade">
                                     <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -124,9 +124,9 @@ if btn_analisar:
                                     <p style="margin-top: 10px; color: #374151;"><b>Onde vender:</b> {item['plataforma_sugerida']}</p>
                                     <p style="color: #6B7280; font-size: 14px;"><b>Justificativa de Mercado:</b> {item['justificativa_negocio']}</p>
                                 </div>
-                            """, unsafe_allowed_html=True)
+                            """, unsafe_allow_html=True)
                 
-                # ----------------- ABA 2: INVENTÁRIO DETALHADO (FOCO LUIZ CAFÉ) -----------------
+                # ----------------- ABA 2: INVENTÁRIO DETALHADO -----------------
                 st.markdown("---")
                 st.markdown("### 📂 Inventário Estruturado de Competências")
                 
@@ -158,24 +158,22 @@ if btn_analisar:
                         st.caption("Nenhuma habilidade criativa detectada.")
                     
             except httpx.HTTPStatusError as h_err:
-                st.error(f"Erro de comunicação com o Backend (Status {h_err.response.status_code}). Certifique-se de que a API FastAPI está ativa e sem erros de inicialização.")
+                st.error(f"Erro de comunicação com o Backend (Status {h_err.response.status_code}). Verifique se sua API FastAPI externa está rodando.")
             except Exception as e:
                 st.error(f"Ocorreu um erro inesperado no processamento da interface: {str(e)}")
 
 else:
-    # Estado Inicial da Tela (Antes do clique no botão)
     st.info("👈 Configure os parâmetros na barra lateral e clique em 'Processar com IA' para rodar o motor analítico.")
     
-    # Demonstração de Storytelling para encantar o Tech Recruiter no primeiro acesso
     st.markdown("---")
     st.markdown("#### **Como Funciona a Arquitetura da Solução?**")
     col_a, col_b, col_c = st.columns(3)
     with col_a:
         st.markdown("##### **1. Ingestão e NLP Estrito**")
-        st.caption("A IA consome textos complexos e desestruturados (currículos ou inputs de questionários) e padroniza os dados utilizando Engenharia de Prompts estruturada via JSON Schema.")
+        st.caption("A IA consome textos complexos e desestruturados e padroniza os dados utilizando Engenharia de Prompts estruturada via JSON Schema.")
     with col_b:
         st.markdown("##### **2. Mapeamento de Mercado**")
-        st.caption("As competências são confrontadas com os motores de demanda de plataformas de economia aberta (Freelance, Mentorias, B2B), encontrando gargalos reais de clientes.")
+        st.caption("As competências são confrontadas com os motores de demanda de plataformas de economia aberta, encontrando gargalos reais de clientes.")
     with col_c:
         st.markdown("##### **3. Geração de Valor Financeiro**")
-        st.caption("O sistema calcula o ticket médio realista e justifica a oportunidade comercial, removendo o profissional da camada técnica pura e elevando-o para a camada de Solução.")
+        st.caption("O sistema calcula o ticket médio realista e justifica a oportunidade comercial, elevando o profissional para a camada de Solução estratégica.")
