@@ -12,7 +12,7 @@ st.set_page_config(
 )
 
 # Estilização Customizada CSS para Visual Clean (Filtro Luiz Café)
-# CORREÇÃO AQUI: Mudado de unsafe_allowed_html para unsafe_allow_html
+# CORREÇÃO: Alterado de unsafe_allowed_html para unsafe_allow_html
 st.markdown("""
     <style>
     .main-title { font-size:38px !important; font-weight: 800; color: #1E3A8A; margin-bottom: 5px; }
@@ -62,8 +62,9 @@ Habilidades: Python, SQL, FastAPI, Streamlit, Power BI, Docker, Azure Databricks
     btn_analisar = st.button("🚀 Processar com IA", use_container_width=True)
 
 # ----------------- PAINEL PRINCIPAL -----------------
-st.markdown('<p class="main-title">💰 Skill2Income AI</p>', unsafe_allowed_html=True)
-st.markdown('<p class="subtitle">Transforme competências técnicas, comportamentais e criativas em ativos financeiros mensuráveis.</p>', unsafe_allowed_html=True)
+# CORREÇÃO CRÍTICA (Linhas 65 e 66): Alterado de unsafe_allowed_html para unsafe_allow_html
+st.markdown('<p class="main-title">💰 Skill2Income AI</p>', unsafe_allow_html=True)
+st.markdown('<p class="subtitle">Transforme competências técnicas, comportamentais e criativas em ativos financeiros mensuráveis.</p>', unsafe_allow_html=True)
 
 if btn_analisar:
     if not raw_text.strip():
@@ -83,7 +84,7 @@ if btn_analisar:
                 col1, col2 = st.columns([1, 2])
                 
                 with col1:
-                    # CORREÇÃO AQUI: Mudado de unsafe_allowed_html para unsafe_allow_html
+                    # CORREÇÃO: Alterado de unsafe_allowed_html para unsafe_allow_html
                     st.markdown(
                         f"""
                         <div class="metric-box">
@@ -94,7 +95,7 @@ if btn_analisar:
                         """, 
                         unsafe_allow_html=True
                     )
-                    # CORREÇÃO AQUI: Mudado de unsafe_allowed_html para unsafe_allow_html
+                    # CORREÇÃO: Alterado de unsafe_allowed_html para unsafe_allow_html
                     st.markdown("<br>", unsafe_allow_html=True)
                     
                     dados_grafico = {
@@ -112,7 +113,7 @@ if btn_analisar:
                         st.info("A IA não identificou canais imediatos de monetização para as entradas fornecidas.")
                     else:
                         for item in plano:
-                            # CORREÇÃO AQUI: Mudado de unsafe_allowed_html para unsafe_allow_html
+                            # CORREÇÃO: Alterado de unsafe_allowed_html para unsafe_allow_html
                             st.markdown(f"""
                                 <div class="card-oportunidade">
                                     <div style="display: flex; justify-content: space-between; align-items: center;">
